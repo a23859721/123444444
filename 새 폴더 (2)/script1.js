@@ -14,6 +14,7 @@ const keywordDB_default = {
 
     "이름": { type: "text", value: "이경현" },
     "직업": { type: "text", value: "학생" },
+    "나이": { type: "text", value: "23살" },
     "생일": { type: "text", value: "2003년 12월 27일" },
     "MBTI": { type: "text", value: "ISFJ" },
     "mbti": { type: "text", value: "ISFJ" },
