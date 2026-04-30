@@ -1,0 +1,325 @@
+/* ========================= */
+/* 기본 설정 */
+/* ========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #f5f5f7);
+    color: #1d1d1f;
+}
+
+/* ========================= */
+/* 헤더 */
+/* ========================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.6);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+body::before {
+    content: "";
+    display: block;
+    height: 70px;
+}
+
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #1d1d1f;
+    position: relative;
+}
+
+/* 메뉴 hover */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #0071e3;
+    transition: 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* ========================= */
+/* 섹션 */
+/* ========================= */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+.hero {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 70px;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero-sub {
+    color: #6e6e73;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+/* ========================= */
+/* 카드 */
+/* ========================= */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    margin-top: -80px;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-card {
+    width: 260px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s;
+
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+.feature-card:nth-child(1){ animation-delay: 0.6s; }
+.feature-card:nth-child(2){ animation-delay: 0.8s; }
+.feature-card:nth-child(3){ animation-delay: 1s; }
+
+/* ========================= */
+/* 조직도 */
+/* ========================= */
+.org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.top-level {
+    display: flex;
+    gap: 50px;
+}
+
+.departments {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.department {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.members {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+
+.card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.head {
+    background: linear-gradient(135deg, #0071e3, #00c6ff);
+    color: white;
+}
+
+/* ========================= */
+/* 캘린더 */
+/* ========================= */
+.calendar-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    margin-bottom: 10px;
+    color: #6e6e73;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 10px;
+}
+
+.day {
+    background: rgba(255,255,255,0.8);
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+
+.day:hover {
+    transform: scale(1.05);
+    background: #0071e3;
+    color: white;
+}
+
+/* ========================= */
+/* 공지 */
+/* ========================= */
+.board {
+    max-width: 600px;
+    margin: auto;
+}
+
+.board-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.board-form input,
+.board-form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.board-form button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #0071e3, #00c6ff);
+    color: white;
+    cursor: pointer;
+}
+
+#notice-list li {
+    background: rgba(255,255,255,0.7);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* ========================= */
+/* 갤러리 */
+/* ========================= */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery img {
+    width: 120px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* ========================= */
+/* 🔥 스크롤 애니메이션 */
+/* ========================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================= */
+/* 애니메이션 */
+/* ========================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================= */
+/* 반응형 */
+/* ========================= */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+}

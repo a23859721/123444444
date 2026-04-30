@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<div class="nav">
+<h1>THE TIKI</h1>
+<div class="menu">
+<a href="index.html">홈</a>
+<a href="schedule.html">일정</a>
+<a href="about.html">임원진</a>
+<a href="gallery.html">갤러리</a>
+<a href="notice.html">공지</a>
+<a href="auth.html">로그인</a>
+</div>
+</div>
+</header>
+
+<section>
+<h2 class="reveal">공지사항</h2>
+
+<div class="board">
+
+<div class="board-form reveal">
+<input type="text" id="notice-title" placeholder="제목">
+<textarea id="notice-content" placeholder="내용"></textarea>
+<button onclick="addNotice()">작성</button>
+</div>
+
+<ul id="notice-list"></ul>
+
+</div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
